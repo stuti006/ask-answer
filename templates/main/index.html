@@ -1,0 +1,271 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Grocery Website Design Tutorial</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static "main/stylemain1.css"%}" />
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <img src="{% static "authy/rait_logo.png" %}" alt="">
+    <nav class="navbar">
+        <a href="/">home</a>
+        <a href="#Events">Events</a>
+        <a href="#Internships">Internships</a>
+        <a href="#Workshops">Workshops</a>
+        <a href="{% url 'bott' %}">QUERY BOT</a> 
+        <a href="{% url 'home' %}">ASK_US</a> 
+        
+      {% comment %} <a href="#FAQs">FAQs</a>  {% endcomment %}
+        
+ </nav>
+   {% if user.is_authenticated %}
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <button type="button" class="btn "> <a href = "{% url 'logout' %}" >logout </a> </button>
+        <div class="fas fa-user" id="logout-btn"></div>
+     </div> 
+        
+    {% else %}
+    <div class ="log-in">
+        <div >
+         <button class="btn"> <a href = "/accounts/register">register </a> </button>
+       </div>
+     
+        <div class="icons">
+         <button type="button" class="btn "> <a href = "/accounts/login" >login </a> </button>
+        </div> 
+        </div>
+    {% endif %} 
+    
+  
+   
+
+</header>
+
+  
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    
+
+</section>
+
+<!-- home section ends -->
+
+<!-- Events section starts  -->
+
+<section class="Events" id="Events">
+
+    <h1 class="heading"> <span>Events</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="{% static "main/IEEE-EVENT.jpeg" %}" alt="">
+            <h3>IEEE</h3>
+           
+            <a href="{% url 'events1' %}" class="btn">Register here</a>
+        </div>
+
+        <div class="box">
+            <img src="{% static "main/CSI-EVENT.jpeg" %}" alt="">
+            <h3>CSI</h3>
+           
+            <a href="{% url 'events2' %}" class="btn">Register here</a>
+        </div>
+
+        <div class="box">
+            <img src="{% static "main/ISTE-EVENT.jpeg" %}" alt="">
+            <h3>ISTE</h3>
+            
+            <a href="{% url 'events3' %}" class="btn">Register here</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- Events section ends -->
+
+<!-- Internships section starts  -->
+
+<section class="Internships" id="Internships">
+
+    <h1 class="heading"> <span>Internships</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="{% static "main/ACM-INTERNSHIP.jpeg" %}" alt="">
+            <h3>ACM</h3>
+            
+            <a href="{% url 'internship1' %}" class="btn">Register here</a>
+        </div>
+
+        <div class="box">
+            <img src= "{% static "main/IEEE-INTERNSHIP.jpeg" %}" alt="">
+            <h3>IEEE</h3>
+            
+            <a href="{% url 'internship2' %}" class="btn">Register here</a>
+        </div>
+
+        <div class="box">
+            <img src="{% static "main/ISTE-INTERNSHIP.jpeg" %}" alt="">
+            <h3>ISTE</h3>
+           
+            <a href="{% url 'internship3' %}" class="btn">Register here</a>
+        </div>
+
+    </div>
+
+</section>
+<!-- Internships section ends -->
+
+<!-- Workshops section starts  -->
+
+<section class="Workshops" id="Workshops">
+
+    <h1 class="heading"> <span>Workshops</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="{% static "main/ACM-WORKSHOP.jpeg"%}" alt="">
+            <h3>ACM</h3>
+            
+            <a href="{% url 'workshop1' %}" class="btn">Register here</a>
+        </div>
+
+        <div class="box">
+            <img src="{% static "main/ISA-WORKSHOP.jpeg"%}" alt="">
+            <h3>ISA</h3>
+           
+            <a href="{% url 'workshop2' %}" class="btn">Register here</a>
+        </div>
+
+        <div class="box">
+            <img src="{% static "main/IETE-WORKSHOP.jpeg" %}"alt="">
+            <h3>IETE</h3>
+           
+            <a href="{% url 'workshop3' %}" class="btn">Register here</a>
+        </div>
+
+        <div class="box">
+            <img src="{% static "main/ACM2.0.jpeg"%}"  alt="">
+            <h3>ACM</h3>
+          
+            <a href="{% url 'workshop4' %}" class="btn">Register here</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Workshops section ends -->
+
+<!-- FAQs section starts  -->
+
+<section class="FAQs" id="FAQs">
+
+    <h1 class="heading"> <span>FAQs</span> </h1>
+
+    <div class="swiper FAQs-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+            </div>
+            </div>
+
+           
+    </div>
+
+</section>
+
+<!-- FAQs section ends -->
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3> Follow us on  </h3>
+            
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> +910000000000 </a>
+            
+            <a href="#" class="links"> <i class="fas fa-envelope"></i> xyz@gmail.com </a>
+            <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Mumbai, India </a>
+        </div>
+
+        
+
+        
+
+    </div>
+
+    <div class="credit"> created by <span> RAIT STUDENTS</span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{% static 'js/main.js'%}"></script>
+
+</body>
+</html>
